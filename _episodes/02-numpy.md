@@ -1,7 +1,7 @@
 ---
 title: Analyzing Patient Data
-teaching: 0
-exercises: 0
+teaching: 25
+exercises: 5
 questions:
 - "How can I process tabular data files in Python?"
 objectives:
@@ -33,7 +33,7 @@ that can be called upon when needed.
 To begin processing inflammation data, we need to load it into Python.
 We can do that using a library called
 [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
-In general, you should use this library when you want to do anything involving numbers,
+This is one of hte most commonly used libraries for doing anything involving numbers,
 matrices or arrays.  To tell Python that we'd like to start using NumPy,
 we need to [import]({{ page.root }}/reference/#import) it:
 
@@ -43,7 +43,7 @@ import numpy
 {: .language-python}
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it
-up on the bench. Libraries provide additional functionality to the basic Python package, much like
+up on the bench. Libraries provide additional functionality to the basic Python package (e.g., new functions and commands), much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
 need for each program.
@@ -66,13 +66,14 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt(...)` is a [function call]({{ page.root }}/reference/#function-call)
+The expression `numpy.loadtxt()` is a [function call]({{ page.root }}/reference/#function-call)
 that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
 belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
 is used everywhere in Python: the thing that appears before the dot contains the thing that
-appears after.
+appears after. The thing after the period (here: `loadtxt`) is a _method_ of numpy.
 
-`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter): the name of the file
+`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter) 
+passed inside the parentheses: the name of the file
 we want to read and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on
 a line. These both need to be character strings (or [strings]({{ page.root }}/reference/#string)
 for short), so we put them in quotes.
@@ -83,23 +84,29 @@ In this case,
 that output is the data we just loaded.
 By default,
 only a few rows and columns are shown
-(with `...` to omit elements when displaying big arrays).
+(with `...` to skip elements when displaying big arrays).
 Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
 
 > ## Importing libraries with shortcuts
 >
 > In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
-> However, shortcuts such as `import numpy as np` are frequently used.  Importing NumPy this way means that after the
+> However, shortcut names for imported libraries, functions or methods such as `import numpy as np` are frequently used.  
+> Importing NumPy this way means that after the
 > inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
 > people prefer this as it is quicker to type and results in shorter lines of code - especially for libraries
 > with long names! You will frequently see Python code online using a NumPy function with `np`, and it's
 > because they've used this shortcut. It makes no difference which approach you choose to take, but you must be
 > consistent as if you use `import numpy as np` then `numpy.loadtxt(...)` will not work, and you must use `np.loadtxt(...)`
 > instead. Because of this, when working with other people it is important you agree on how libraries are imported.
+> 
+> For a more thorough tutorial on the various ways of importing Python libraries, see 
+> <a href="https://realpython.com/absolute-vs-relative-python-imports/">this article</a> at 
+> <a href="https://realpython.com">RealPython.com</a>. RealPython.com is a great resource for Python users at any level
+> of expertise, with guides and tutorials written by the people who develop and maintain the Python language.
 {: .callout}
 
 Our call to `numpy.loadtxt` read our file
-but didn't save the data in memory.
+but didn't save the results.
 To do that,
 we need to assign the array to a variable. In a similar manner to how we assign a single
 value to a variable, we can also assign an array of values to a variable using the same syntax.
@@ -394,9 +401,9 @@ maximum inflammation for patient 0: 18.0
 {: .output}
 
 Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference/#comment) that is ignored by Python.
+[comment]({{ page.root }}/reference/#comment) that is ignored by the Python interpreter.
 Comments allow programmers to leave explanatory notes for other
-programmers or their future selves.
+programmers or their future selves. 
 
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
