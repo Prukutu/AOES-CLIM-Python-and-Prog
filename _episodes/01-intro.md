@@ -40,6 +40,7 @@ $ module load anaconda/3
 
 
 5. To start an interactive Python session, type:
+
 ~~~
 $ python
 ~~~
