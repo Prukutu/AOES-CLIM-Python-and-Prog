@@ -26,7 +26,6 @@ For examples used in class:
 `python-novice-inflammation-code.zip`
 `python-novice-inflammation-data.zip`
 3. Unzip the two files
-
 You should see two new folders called `data` and `code` in the `swc-python` directory
 
 4. Load a Python module so that you will have access to the language and its interpreter. 
@@ -38,8 +37,7 @@ $ module load anaconda/3
 ~~~
 {: .language-bash}
 
-
-5. To start an interactive Python session, type:
+To start an interactive Python session, type:
 
 ~~~
 $ python
