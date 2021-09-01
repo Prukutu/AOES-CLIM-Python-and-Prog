@@ -22,9 +22,11 @@ For examples used in class:
 
 1. Create a new directory via your account on the COLA servers called:
 `swc-python`
+
 2. Copy the following two files from `~dirmeyer/classes/f2021` to your new directory:
 `python-novice-inflammation-code.zip`
 `python-novice-inflammation-data.zip`
+
 3. Unzip the two files
 You should see two new folders called `data` and `code` in the `swc-python` directory
 
@@ -205,3 +207,4 @@ weight in kilograms is now: 65.0
 {: .challenge}
 
 {% include links.md %}
+ 
