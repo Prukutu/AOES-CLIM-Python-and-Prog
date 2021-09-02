@@ -23,7 +23,7 @@ For examples used in class:
 1. Create a new directory via your account on the COLA servers called:
 `swc-python`
 
-2. Copy the following two files from `~dirmeyer/classes/f2021` to your new directory:
+2. Copy the following two files from `/homes/dirmeyer/classes/f2021` to your new directory:
 `python-novice-inflammation-code.zip`
 `python-novice-inflammation-data.zip`
 
