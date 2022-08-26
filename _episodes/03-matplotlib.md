@@ -18,7 +18,7 @@ the best way to develop insight is often to visualize data.  Visualization deser
 lecture of its own, but we can explore a few features of Python's `matplotlib` library here.  While
 there is no official Python plotting library, `matplotlib` is the _de facto_ standard.  First, we will
 import the `pyplot` module from `matplotlib` and use two of its functions to create and display a
-heat map of our data:
+_heat map_ of our data:
 
 ~~~
 from matplotlib import pyplot
@@ -38,7 +38,7 @@ We could have abbreviated more by using a shortcut, e.g., to refer to the `matpl
 Now let's plot the medical data we read previously:
 
 ~~~
-image = pyplot.imshow(data)
+heatmap = pyplot.imshow(data)
 pyplot.show()
 ~~~
 {: .language-python}
@@ -48,7 +48,31 @@ pyplot.show()
 Blue pixels in this heat map represent low values, while yellow pixels represent high values.  As we
 can see, inflammation rises and falls over a 40-day period.  
 
-To continue, close the plot window.
+> ## More About Objects
+>
+> You may have thought it peculiar that we typed this line:
+> ~~~
+> heatmap = pyplot.imshow(data)
+> ~~~
+> {: .language-python}  
+> 
+> The function `pyplot.imshow()` took as an argument our array `data`, and the name suggests it 
+> shows an image. How can we assign that to a variable `heatmap`? What is happening?
+> 
+> > > ## Solution
+> > Recall that _everything_ created in Python is an object. 
+> > When we make that assignment with the equals sign, `heatmap` is not a variable, 
+> > but the _name_ of the _object_ that is the _result_ of the _function_ `pyplot.imshow` 
+> > plotting the contents of the _array_ named `data`.
+> > There are attributes, methods, and all kinds of information contained in an object assigned to the name `heatmap`.
+> > Specifically, `heatmap` is a graphical object - it contains information used to render a shaded plot of the
+> > information in the argument passed to `pyplot.imshow`, from the object called 'data'.
+> > 
+> > The subsequent function `pyplot.show()` takes any graphical objects that have been created and displays them. 
+> {: .solution}
+{: .challenge}
+
+To continue, close the plot window (click the "X").
 
 Let's take a look at the average inflammation over time:
 
@@ -62,9 +86,10 @@ pyplot.show()
 ![Average Inflammation Over Time](../fig/inflammation-01-average.svg)
 
 Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then
-asked `matplotlib.pyplot` to create and display a line graph of those values.  The result is a
-roughly linear rise and fall, which is suspicious: we might instead expect a sharper rise and slower
-fall.  Let's have a look at two other statistics:
+asked `matplotlib.pyplot` to create and display a line graph of those values using the function named `plot()`.  
+The result is a roughly linear rise and fall, 
+which seems rather suspicious: we might instead expect a sharper rise and slower
+fall.  Let's have a look at two other statistics. Close the plot window and proceed:
 
 ~~~
 max_plot = pyplot.plot(numpy.max(data, axis=0))
@@ -74,10 +99,31 @@ pyplot.show()
 
 What is this showing?  Can you deduce it from the name of the `numpy` function? 
 
-How about if you try the `numpy.std` method?
+How about if you try the `numpy.std` function?
 
 ~~~
 std_plot = pyplot.plot(numpy.std(data, axis=0))
+pyplot.show()
+~~~
+{: .language-python}
+
+Strictly speaking, you do not need to assign object names to each plot. 
+The act of calling a plotting function such as `pyplot.imshow` or `pyplot.plot` creates an 
+open figure for each call. They remain open until `pyplot.show` is called, which displays 
+all open figures and closes them.
+
+However, there are times when you will want to create a named graphical object.
+The information in the object could be useful, 
+e.g., if you want to arrange multiple plots as panels on a page. 
+We will see such applications later.
+
+For now, try calling multiple plotting functions before calling `pyplot.show` - what
+do you think will happen?
+
+~~~
+pyplot.plot(numpy.min(data, axis=0))
+pyplot.plot(numpy.max(data, axis=0))
+pyplot.plot(numpy.median(data, axis=0))
 pyplot.show()
 ~~~
 {: .language-python}
