@@ -20,10 +20,10 @@ keypoints:
 For this lesson we will begin using the Python programming language.  
 For examples used in class:
 
-1. Create a new directory via your account on the COLA servers called:
+1. Log onto HOPPER and create a new directory in your home directory called:
 `swc-python`
 
-2. Copy the following two files from `/homes/dirmeyer/classes/f2021` to your new directory:
+2. Copy the following two files from `/home/pdirmeye/classes/clim680_2022/` to your new directory:
 `python-novice-inflammation-code.zip`
 `python-novice-inflammation-data.zip`
 
@@ -49,16 +49,18 @@ $ python
 ## Variables
 
 Any Python interpreter can be used as a calculator:
+
 ~~~
 3 + 5 * 4
 ~~~
 {: .language-python}
+
 ~~~
 23
 ~~~
 {: .output}
 
-This is great but not very interesting.
+This is fine, but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
 In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
 [variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
@@ -80,7 +82,7 @@ In Python, variable names:
 
 This means that, for example:
  - `weight0` is a valid variable name, whereas `0weight` is not
- - `weight` and `Weight` are different variables
+ - `weight` and `Weight` are **different** variables
 
 ## Types of data
 Python knows various types of data. Three common ones are:
@@ -97,7 +99,7 @@ weight_kg = 60.0
 ~~~
 {: .language-python}
 
-And to create a string, we add single or double quotes around some text, for example:
+And to create a string, we surround the text with single or double quotes, for example:
 
 ~~~
 weight_kg_text = 'weight in kilograms:'
@@ -123,6 +125,7 @@ We can display multiple things at once using only one `print` command:
 print(weight_kg_text, weight_kg)
 ~~~
 {: .language-python}
+
 ~~~
 weight in kilograms: 60.0
 ~~~
@@ -141,6 +144,7 @@ weight in pounds: 132.0
 {: .output}
 
 The above command, however, did not change the value of `weight_kg`:
+
 ~~~
 print(weight_kg)
 ~~~
@@ -180,6 +184,7 @@ weight in kilograms is now: 65.0
 > {: .language-python}
 >
 > > ## Solution
+> > 
 > > ~~~
 > > 95.0 102
 > > ~~~
@@ -194,15 +199,19 @@ weight in kilograms is now: 65.0
 > ~~~
 > first, second = 'Grace', 'Hopper'
 > third, fourth = second, first
-> print(third, fourth)
+> print(fourth, third)
 > ~~~
 > {: .language-python}
 >
 > > ## Solution
+> > 
 > > ~~~
-> > Hopper Grace
+> > Grace Hopper
 > > ~~~
 > > {: .output}
+> > 
+> > Who is [Grace Hopper](https://en.wikipedia.org/wiki/Grace_Hopper){:target="_blank" rel="noopener"}?
+> > 
 > {: .solution}
 {: .challenge}
 
