@@ -25,7 +25,7 @@ keypoints:
 Words are useful, but what's more useful are the sentences and stories we build with them.
 Similarly, while a lot of powerful, general tools are built into Python,
 specialized tools built up from these basic units live in
-[libraries]({{ page.root }}/reference/#library)
+**libraries** 
 that can be called upon when needed.
 
 ## Loading data into Python
@@ -35,7 +35,7 @@ We can do that using a library called
 [NumPy](http://docs.scipy.org/doc/numpy/ "NumPy Documentation"), which stands for Numerical Python.
 This is one of hte most commonly used libraries for doing anything involving numbers,
 matrices or arrays.  To tell Python that we'd like to start using NumPy,
-we need to [import]({{ page.root }}/reference/#import) it:
+we need to **import** it:
 
 ~~~
 import numpy
@@ -143,7 +143,7 @@ print(data)
 Now that the data are in memory,
 we can manipulate them.
 First,
-let's ask what [type]({{ page.root }}/reference/#type) of thing `data` refers to:
+let's ask what **type** of thing `data` refers to:
 
 ~~~
 print(type(data))
@@ -181,10 +181,13 @@ are their daily inflammation measurements.
 > {: .output}
 >
 > This tells us that the NumPy array's elements are
-> [floating-point numbers]({{ page.root }}/reference/#floating-point number).
+> **floating-point numbers**.
+> Here, `dtype` is one of the methods of the object `data`, 
+> and it reveals the attribute of `data` that its data type is a floating-point number stored in 64 bytes of memory.
+> In fact, `data.dtype` is itself an object, but let's not get to _metaphysical_ right now! :) 
 {: .callout}
 
-With the following command, we can see the array's [shape]({{ page.root }}/reference/#shape):
+With the following command, we can see the array's **shape**:
 
 ~~~
 print(data.shape)
@@ -196,17 +199,20 @@ print(data.shape)
 ~~~
 {: .output}
 
+`shape` is also a method of `data` that reveals other attributes.
 The output tells us that the `data` array variable contains 60 rows and 40 columns. When we
-created the variable `data` to store our arthritis data, we did not only create the array; we also
-created information about the array, called [members]({{ page.root }}/reference/#member) or
-attributes. This extra information describes `data` in the same way an adjective describes a noun.
+created the variable `data` to store our arthritis data, we did not only create the array.
+Python also created attribute information about the array, and attached a number of methods to it, 
+based on its class. 
+This extra information describes `data` in the same way adjectives describes a noun.
 `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same
-dotted notation for the attributes of variables that we use for the functions in libraries because
-they have the same part-and-whole relationship.
+dotted notation for the methods and attributes of variables that we use for the functions in libraries because
+they have the same part-of-the-whole relationship.
 
 If we want to get a single number from the array, we must provide an
-[index]({{ page.root }}/reference/#index) in square brackets after the variable name, just as we
-do in math when referring to an element of a matrix.  Our inflammation data has two dimensions, so
+**index** in square brackets after the variable name, just as we
+do in math when referring to an element of a matrix. 
+Our inflammation data has two dimensions, so
 we will need to use two indices to refer to one specific value:
 
 ~~~
@@ -280,7 +286,7 @@ print(data[0:4, 0:10])
 ~~~
 {: .output}
 
-The [slice]({{ page.root }}/reference/#slice) `0:4` means, "Start at index 0 and go up to, but not
+The **slice** `0:4` means, "Start at index 0 and go up to, but not
 including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the
 rule is that the difference between the upper and lower bounds is the number of values in the slice.
 
@@ -337,13 +343,30 @@ print(numpy.mean(data))
 ~~~
 {: .output}
 
-`mean` is a [function]({{ page.root }}/reference/#function) that takes
-an array as an [argument]({{ page.root }}/reference/#argument).
+`mean` is a **function** in `numpy` that takes
+an array as an **argument**.
 
-> ## Not All Functions Have Input
+> ## Calling Functions
 >
-> Generally, a function uses inputs to produce outputs.
-> However, some functions produce outputs without
+> Earlier we called a function and gave it **parameters**, 
+> this time we gave a function an **argument**.
+> What's the difference?
+> 
+> In Python, a function may have one or more required inputs, specified in a particular order.
+> These are arguments. However, sometimes only the first (or first _n_) arguments are required,
+> and subsequent arguments are optional. 
+> 
+> Parameters are generally optional, and must be preceded by `parm_name=` where `parm_name` is the name of the parameter
+> (like `fname=` and `delimiter=` when we called `numpy.loadtxt`).
+> Parameters do not need to be in any particular order, but they must come after arguments.
+> And some parameters may be either/or: if you specify this parameter, you cannot also specify that one.
+> The documentation for the function will explain such situations.
+> 
+> There are also some functions where an argument can be a parameter, e.g., 
+> it must be the first argument if it is not preceeded by its parameter name, 
+> but could go anywhere in the list if you include the name.
+> 
+> Finally, some functions produce outputs without
 > needing any input. For example, checking the current time
 > doesn't require any input.
 >
@@ -354,12 +377,12 @@ an array as an [argument]({{ page.root }}/reference/#argument).
 > {: .language-python}
 >
 > ~~~
-> Sat Mar 26 13:07:33 2016
+> Thu Sep 01 17:07:33 2022
 > ~~~
 > {: .output}
 >
 > For functions that don't take in any arguments,
-> we still need parentheses (`()`)
+> we still need a set of parentheses `()`
 > to tell Python to go and do something for us.
 {: .callout}
 
@@ -404,10 +427,18 @@ maximum inflammation for patient 0: 18.0
 ~~~
 {: .output}
 
-Everything in a line of code following the '#' symbol is a
-[comment]({{ page.root }}/reference/#comment) that is ignored by the Python interpreter.
-Comments allow programmers to leave explanatory notes for other
-programmers or their future selves. 
+> ## Comments
+>
+> Everything in a line of code following the '#' symbol is a
+> **comment** that is ignored by the Python interpreter.
+> Comments allow programmers to leave explanatory notes for other
+> programmers or their future selves. 
+> Comments can also go on lines by themselves.
+> 
+> Placing `#` in the first column of a line of code "comments it out" 
+> so that it is not executed - this is a handy feature when you are writing and 
+> debugging programs and scripts.
+{: .callout}
 
 We don't actually need to store the row in a variable of its own.
 Instead, we can combine the selection and the function call:
@@ -489,7 +520,7 @@ which is the average inflammation per patient across all days.
 
 > ## Slicing Strings
 >
-> A section of an array is called a [slice]({{ page.root }}/reference/#slice).
+> As we learned above, a section of an array is called a slice.
 > We can take slices of character strings as well:
 >
 > ~~~
