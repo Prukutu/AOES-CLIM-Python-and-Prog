@@ -197,9 +197,9 @@ weight in kilograms is now: 65.0
 > What does the following program print out?
 >
 > ~~~
-> first, second = 'Grace', 'Hopper'
+> first, second = 'Hopper', 'Grace'
 > third, fourth = second, first
-> print(fourth, third)
+> print(third, fourth)
 > ~~~
 > {: .language-python}
 >
