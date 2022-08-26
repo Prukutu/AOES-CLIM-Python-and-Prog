@@ -245,7 +245,7 @@ because it represents an offset from the first value in the array (the second
 value is offset by one index from the first value). This is closer to the way
 that computers represent arrays (if you are interested in the historical
 reasons behind counting indices from zero, you can read
-[Mike Hoye's blog post](http://exple.tive.org/blarg/2013/10/22/citation-needed/)).
+[Mike Hoye's blog post](http://exple.tive.org/blarg/2013/10/22/citation-needed/){:target="_blank" rel="noopener"}).
 As a result,
 if we have an M×N array in Python,
 its indices go from 0 to M-1 on the first axis
