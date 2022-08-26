@@ -35,7 +35,7 @@ If you already have a Python environment set up, you may load/use that.
 If you do not or are unsure, you may run the following command:
 
 ~~~
-$ module load anaconda/3
+$ module load python
 ~~~
 {: .language-bash}
 
@@ -62,8 +62,8 @@ Any Python interpreter can be used as a calculator:
 
 This is fine, but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_.
-In Python, we can [assign]({{ page.root }}/reference/#assign) a value to a
-[variable]({{ page.root }}/reference/#variable), using the equals sign `=`.
+In Python, we can **assign** a value to a
+**variable**, using the equals sign `=`.
 For example, to assign value `60` to a variable `weight_kg`, we would execute:
 
 ~~~
@@ -72,17 +72,17 @@ weight_kg = 60
 {: .language-python}
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to
-it. In layman's terms, **a variable is a name for a value**.
+it. In layman's terms, a variable is a name for a value.
 
 In Python, variable names:
 
  - can include letters, digits, and underscores
  - cannot start with a digit
- - are [case sensitive]({{ page.root }}/reference/#case-sensitive).
+ - are **case sensitive**.
 
 This means that, for example:
- - `weight0` is a valid variable name, whereas `0weight` is not
- - `weight` and `Weight` are **different** variables
+ - `weight1` is a valid variable name, whereas `1weight` is not.
+ - `weight` and `Weight` are _different variables_.
 
 ## Types of data
 Python knows various types of data. Three common ones are:
