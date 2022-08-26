@@ -66,16 +66,17 @@ array([[ 0.,  0.,  1., ...,  3.,  0.,  0.],
 ~~~
 {: .output}
 
-The expression `numpy.loadtxt()` is a [function call]({{ page.root }}/reference/#function-call)
-that asks Python to run the [function]({{ page.root }}/reference/#function) `loadtxt` which
-belongs to the `numpy` library. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
+The expression `numpy.loadtxt()` is a **function call**
+that asks Python to run the **function** `loadtxt` which
+belongs to the `numpy` library. This dotted notation
 is used everywhere in Python: the thing that appears before the dot contains the thing that
 appears after. The thing after the period (here: `loadtxt`) is a _method_ of numpy.
 
-`numpy.loadtxt` has two [parameters]({{ page.root }}/reference/#parameter) 
-passed inside the parentheses: the name of the file
-we want to read and the [delimiter]({{ page.root }}/reference/#delimiter) that separates values on
-a line. These both need to be character strings (or [strings]({{ page.root }}/reference/#string)
+`numpy.loadtxt` has two **parameters** 
+passed inside the parentheses: the name of the file (parameter `fname`)
+we want to read and the character that separates values on
+a line (parameter `delimiter`). 
+These both need to be character strings (or **strings**
 for short), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output,
@@ -89,8 +90,9 @@ Note that, to save space when displaying NumPy arrays, Python does not show us t
 
 > ## Importing libraries with shortcuts
 >
-> In this lesson we use the `import numpy` [syntax]({{ page.root }}/reference/#syntax) to import NumPy.
-> However, shortcut names for imported libraries, functions or methods such as `import numpy as np` are frequently used.  
+> In this lesson we use the `import numpy` syntax to import NumPy.
+> However, shortcut names can be assigned for imported libraries, 
+> functions or methods. Short namings such as `import numpy as np` are frequently used.  
 > 
 > Importing NumPy this way means that after the
 > inital import, rather than writing `numpy.loadtxt(...)`, you can now write `np.loadtxt(...)`. Some
@@ -118,7 +120,7 @@ data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 ~~~
 {: .language-python}
 
-This statement doesn't produce any output because we've assigned the output to the variable `data`.
+This statement doesn't print any output because we've assigned the output to the variable `data`.
 If we want to check that the data have been loaded,
 we can print the variable's value:
 
@@ -252,7 +254,8 @@ the index is how many steps we have to take from the start to get the item we wa
 > it shows the element with index `[0, 0]` in the upper left corner
 > rather than the lower left.
 > This is consistent with the way mathematicians draw matrices
-> but different from the Cartesian coordinates.
+> but different from the Cartesian coordinates you may have learned in 
+> geometry class, and typically use when you make plots.
 > The indices are (row, column) instead of (column, row) for the same reason,
 > which can be confusing when plotting data.
 {: .callout}
