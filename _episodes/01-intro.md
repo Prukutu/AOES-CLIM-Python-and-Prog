@@ -174,12 +174,16 @@ weight in kilograms is now: 65.0
 > Everything in Python, variables, functions, libraries,... _everything_ is an **object**. 
 > And all objects are **instances** of **classes** and have **attributes**. 
 > These are characteristics of object-oriented programming (OOP).
+> 
 > * A class has a set of common characteristics, e.g. in biology, "humans" can be thought of as a class.
 >   * Classes may contain other classes, e.g., the class "mammals" contains the class "humans".
+>   
 > * An instance of a class is an object. 
 >   * A specific person is an instance of "humans". In OOP, you would be an object within the class "humans".
+>   
 > * An object has attributes, and different objects in the same class may or may not share attributes.
 >   * You may have the attribute "tall" or "short", "young" or "middle-aged" or "old", etc.
+>   
 > * Additionally, some of the attributes of an object can be procedures the object is capable of - these are called **methods**.
 >   * Some of your attributes could be things you can do (i.e., methods), like "juggle" or "ride a bike" or "sing".
 >   
