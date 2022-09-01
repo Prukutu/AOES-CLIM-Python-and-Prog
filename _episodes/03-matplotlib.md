@@ -51,6 +51,7 @@ can see, inflammation rises and falls over a 40-day period.
 > ## More About Objects
 >
 > You may have thought it peculiar that we typed this line:
+> 
 > ~~~
 > heatmap = pyplot.imshow(data)
 > ~~~
@@ -59,7 +60,8 @@ can see, inflammation rises and falls over a 40-day period.
 > The function `pyplot.imshow()` took as an argument our array `data`, and the name suggests it 
 > shows an image. How can we assign that to a variable `heatmap`? What is happening?
 > 
-> > > ## Solution
+> > ## Solution
+> > 
 > > Recall that _everything_ created in Python is an object. 
 > > When we make that assignment with the equals sign, `heatmap` is not a variable, 
 > > but the _name_ of the _object_ that is the _result_ of the _function_ `pyplot.imshow` 
