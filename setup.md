@@ -7,7 +7,7 @@ root: ..
 
 
 ## Obtain lesson materials
-1. Login to COLA
+1. Login to Hopper
 2. Download [python-novice-inflammation-data.zip][zipfile1]
         and [python-novice-inflammation-code.zip][zipfile2].
 3. Create a folder called `swc-python` in your home directory (or a sub-directory).
