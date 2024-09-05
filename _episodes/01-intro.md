@@ -23,7 +23,7 @@ For examples used in class:
 1. Log onto the Hopper Desktop using the [browser-based Dashboard](https://ondemand.orc.gmu.edu/), launch a terminal window and create a new directory in your home directory called:
 `swc-python`
 
-2. Copy the following two files from `/home/prukutu/classes/clim680_2022/` to your new directory:
+2. Copy the following two files from `/home/lortizur/clim680/` to your new directory:
 `python-novice-inflammation-code.zip`
 `python-novice-inflammation-data.zip`
 
